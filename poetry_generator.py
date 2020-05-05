@@ -31,9 +31,11 @@ input_sequences = np.array(pad_sequences(input_sequences, maxlen=max_sequence_le
 model = load_model('arctic_monkeys_model.h5')
 
 
+print("Enter the beginning sentence")
+seed_text = input()
 
-seed_text = "Let us"
-next_words = 5
+print("Enter no of auto-generated words")
+next_words = int(input())
 
 for _ in range(next_words):
 	token_list = tokenizer.texts_to_sequences([seed_text])[0]
